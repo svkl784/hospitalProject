@@ -26,11 +26,12 @@ public class Patient implements Serializable {
                     CascadeType.MERGE, CascadeType.DETACH})
     private Therapy therapy;
 
-    @ManyToMany (cascade = {CascadeType.REFRESH,CascadeType.PERSIST,
-            CascadeType.MERGE,CascadeType.DETACH})
-    @JoinTable (name = "therapy",
-    joinColumns =@JoinColumn(name = ""))
-    private List <Employee> employees;
+    @ManyToMany(cascade = {CascadeType.REFRESH, CascadeType.PERSIST,
+            CascadeType.MERGE, CascadeType.DETACH}, fetch = FetchType.LAZY,targetEntity= Employee.class)
+    @JoinTable(name = "therapy",
+            joinColumns = {@JoinColumn(name = "id_patient")},
+            inverseJoinColumns = {@JoinColumn(name = "id_employee")})
+    private List<Employee> employees;
 
     public Patient() {
     }
@@ -42,8 +43,9 @@ public class Patient implements Serializable {
         this.dateOfBirth = dateOfBirth;
         this.healthsComplaints = healthsComplaints;
     }
-    private void addEmployeeToPatient (Employee employee) {
-        if (employees == null){
+
+   public void addEmployeeToPatient(Employee employee) {
+        if (employees == null) {
             employees = new ArrayList<>();
         }
         employees.add(employee);
@@ -58,6 +60,14 @@ public class Patient implements Serializable {
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", healthsComplaints='" + healthsComplaints + '\'' +
                 '}';
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 
     public Therapy getTherapy() {

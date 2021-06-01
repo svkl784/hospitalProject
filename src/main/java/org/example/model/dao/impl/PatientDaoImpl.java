@@ -1,58 +1,60 @@
 package org.example.model.dao.impl;
 
-import org.example.model.dao.EmployeeDao;
+import org.example.model.dao.PatientDao;
 import org.example.model.entity.Employee;
+import org.example.model.entity.Patient;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @Repository
-public class EmployeeDaoImpl implements EmployeeDao {
+public class PatientDaoImpl implements PatientDao {
+
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public void delete(Employee employee) {
-
-    }
-    @Override
-    public void createOrUpdate(Employee employee) {
+    public void delete(Patient patient) {
 
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
+    public void createOrUpdate(Patient patient) {
+
+    }
+
+    @Override
+    public Patient getPatientById(int id) {
         return null;
     }
 
     @Override
-    public List<Employee> getAllEmployee() {
+    public List<Patient> getAllPatient() {
         Session session = sessionFactory.getCurrentSession();
-        List <Employee> allEmployees = session.createQuery("from Employee", Employee.class)
+        List <Patient> allPatients = session.createQuery("from Patient ", Patient.class)
                 .getResultList();
-        return allEmployees;
+        return allPatients;
     }
 
     @Override
-    public Employee getEmployeeByFirstName() {
+    public Patient getPatientByFirstName() {
         return null;
     }
 
     @Override
-    public Employee getEmployeeBySecondName() {
+    public Patient getPatientBySecondName() {
         return null;
     }
 
     @Override
-    public Employee getEmployeeByFirstAndSecondName() {
+    public Patient getPatientByFirstAndSecondName() {
         return null;
     }
 
     @Override
-    public Employee getEmployeeByIdAndFirstAndSecondName() {
+    public Patient getPatientByIdAndFirstAndSecondName() {
         return null;
     }
 }

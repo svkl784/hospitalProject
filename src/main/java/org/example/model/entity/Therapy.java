@@ -22,6 +22,9 @@ public class Therapy implements Serializable {
     @JoinColumn (name = "id_patient")
     private Patient id_patient;
 
+    @Column (name = "id_employee")
+    private int id_employee;
+
 
 
     public Therapy() {

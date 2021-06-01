@@ -14,5 +14,10 @@
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="show_sql">true</property>
 
+        <mapping class="org.example.model.entity.Employee"/>
+        <mapping class="org.example.model.entity.Department"/>
+        <mapping class="org.example.model.entity.Patient"/>
+        <mapping class="org.example.model.entity.Therapy"/>
+
     </session-factory>
 </hibernate-configuration>

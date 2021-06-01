@@ -5,32 +5,20 @@ import org.example.model.entity.Patient;
 
 import java.util.List;
 
-public class PatientDao {
-    void delete(Patient patient) {
-    }
+public interface PatientDao {
+    void delete(Patient patient);
 
-    void createOrUpdate(Patient patient){
-    }
+    void createOrUpdate(Patient patient);
 
-    Patient getPatientById(int id){
-        return null;
-    }
+    Patient getPatientById(int id);
 
-    List<Patient> getAll(){
-        return null;
-    }
+    List<Patient> getAllPatient();
 
-    Patient getPatientByFirstName(){
-        return null;
-    }
-    Patient getPatientBySecondName(){
-        return null;
-    }
-    Patient getPatientByFirstAndSecondName(){
-        return null;
-    }
+    Patient getPatientByFirstName();
 
-    Patient getPatientByIdAndFirstAndSecondName(){
-        return null;
-    }
+    Patient getPatientBySecondName();
+
+    Patient getPatientByFirstAndSecondName();
+
+    Patient getPatientByIdAndFirstAndSecondName();
 }

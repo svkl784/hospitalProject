@@ -1,4 +1,9 @@
 package org.example.model.service;
 
-public class PatientService {
+import org.example.model.entity.Patient;
+
+import java.util.List;
+
+public interface PatientService {
+    public List<Patient> getAllPatient();
 }

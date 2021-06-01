@@ -18,10 +18,16 @@ public class Employee implements Serializable {
     private String secondName;
 
     @ManyToOne (cascade = {CascadeType.REFRESH,CascadeType.PERSIST,
-            CascadeType.MERGE,CascadeType.DETACH}) //подумай, может сделать uni-directional связь
+            CascadeType.MERGE,CascadeType.DETACH}) //подумаnm, может сделать uni-directional связь
     @JoinColumn (name = "department")
     private Department department;
 
+
+    @ManyToMany (cascade = {CascadeType.REFRESH,CascadeType.PERSIST,
+            CascadeType.MERGE,CascadeType.DETACH},  fetch = FetchType.LAZY, targetEntity = Patient.class)
+    @JoinTable (name = "therapy",
+            joinColumns ={@JoinColumn(name = "id_employee")},
+            inverseJoinColumns = {@JoinColumn(name = "id_patient")})
     private List <Patient> patients;
 
 
@@ -33,7 +39,7 @@ public class Employee implements Serializable {
         this.secondName = secondName;
     }
 
-    private void addPatientToEmployee (Patient patient) {
+    public void addPatientToEmployee (Patient patient) {
         if (patients == null){
             patients = new ArrayList<>();
         }
