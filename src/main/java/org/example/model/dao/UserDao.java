@@ -6,7 +6,7 @@ import org.example.model.entity.User;
 import java.util.List;
 
 public interface UserDao {
-    void delete(User user);
+    void deleteUser(User user);
     void createOrUpdate(User user);
     List<User> getAllUser();
 

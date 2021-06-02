@@ -22,9 +22,10 @@ public class Therapy implements Serializable {
     @JoinColumn (name = "id_patient")
     private Patient id_patient;
 
-    @Column (name = "id_employee")
-    private int id_employee;
-
+    @ManyToOne (cascade = {CascadeType.REFRESH,CascadeType.PERSIST,
+            CascadeType.MERGE,CascadeType.DETACH})
+    @JoinColumn (name = "id_employee")
+    private Employee id_employee;
 
 
     public Therapy() {
@@ -38,14 +39,17 @@ public class Therapy implements Serializable {
 
     @Override
     public String toString() {
-        return "Therapy{" +
-                "id_therapy=" + id_therapy +
-                ", id_category_therapy=" + id_category_therapy +
-                ", name_therapy='" + name_therapy + '\'' +
-                ", id_patient=" + id_patient +
-                '}';
+        return "id_therapy: " + id_therapy +
+                ", name_therapy:'" + name_therapy;
     }
 
+    public Employee getId_employee() {
+        return id_employee;
+    }
+
+    public void setId_employee(Employee id_employee) {
+        this.id_employee = id_employee;
+    }
 
     public Patient getId_patient() {
         return id_patient;

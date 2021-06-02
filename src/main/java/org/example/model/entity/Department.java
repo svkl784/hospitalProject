@@ -37,10 +37,7 @@ public class Department implements Serializable {
 
     @Override
     public String toString() {
-        return "Department{" +
-                "id_department=" + id_department +
-                ", name_department='" + name_department + '\'' +
-                '}';
+        return name_department;
     }
 
     public List<Employee> getEmployees() {

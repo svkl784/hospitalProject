@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +44,7 @@
             background-color: #f1f1f1;
             text-align: center;
         }
+
         .button {
             background-color: #33ccff;
             border: none;
@@ -56,27 +57,27 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-        .button4 {border-radius: 12px;}
+
+        .button4 {
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
-<h1>Register</h1>
-<p>Please fill out this form to sign in to your account!</p>
-<form action=" ">
-    <div class="container">
-        <%--@declare id="username"--%><%--@declare id="email"--%><%--@declare id="password"--%>
-        <label for="userName"><b>UserName</b></label>
-        <input type="text" placeholder="Enter Email" name="userName" required>
+<h1>Create new patient</h1>
+<p>Please enter new patient details</p>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter email" name="email" required>
+<form:form action="createdPatient" modelAttribute="newPatient">
+    First Name <form:input path="firstName" placeholder="Enter first name"/>
+    <br>
+    Second Name <form:input path="secondName" placeholder="Enter second name"/>
+    <br>
+    Date of birth <form:input path="dateOfBirth" placeholder="Enter date of birth"/>
+    <br>
+    Healths Complaints<form:input path="healthsComplaints" placeholder="Enter healths complaints"/>
+    <input class="button button4" type="submit" value="OK">
 
-        <label for="password"><b>Enter Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <hr>
-
-    <p>If you are not registered, contact the administrator <a href="#">Write a message to the administrator</a>.</p>
-</form>
+</form:form>
 
 </body>
 </html>

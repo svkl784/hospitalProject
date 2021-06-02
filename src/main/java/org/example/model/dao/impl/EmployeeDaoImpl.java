@@ -15,17 +15,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void delete(Employee employee) {
+    public void deleteEmployee(Employee employee) {
 
     }
     @Override
     public void createOrUpdate(Employee employee) {
 
-    }
-
-    @Override
-    public Employee getEmployeeById(int id) {
-        return null;
     }
 
     @Override
@@ -36,23 +31,4 @@ public class EmployeeDaoImpl implements EmployeeDao {
         return allEmployees;
     }
 
-    @Override
-    public Employee getEmployeeByFirstName() {
-        return null;
-    }
-
-    @Override
-    public Employee getEmployeeBySecondName() {
-        return null;
-    }
-
-    @Override
-    public Employee getEmployeeByFirstAndSecondName() {
-        return null;
-    }
-
-    @Override
-    public Employee getEmployeeByIdAndFirstAndSecondName() {
-        return null;
-    }
 }

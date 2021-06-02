@@ -6,19 +6,10 @@ import java.util.List;
 
 // CRUD - create, read, update, delete
 public interface EmployeeDao {
-    void delete(Employee employee);
+    public void deleteEmployee(Employee employee);
 
-    void createOrUpdate(Employee employee);
+    public void createOrUpdate(Employee employee);
 
-    Employee getEmployeeById(int id);
+    public List <Employee> getAllEmployee();
 
-    List <Employee> getAllEmployee();
-
-    Employee getEmployeeByFirstName();
-
-    Employee getEmployeeBySecondName();
-
-    Employee getEmployeeByFirstAndSecondName();
-
-    Employee getEmployeeByIdAndFirstAndSecondName();
 }

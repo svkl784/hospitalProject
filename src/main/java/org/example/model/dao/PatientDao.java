@@ -6,19 +6,11 @@ import org.example.model.entity.Patient;
 import java.util.List;
 
 public interface PatientDao {
-    void delete(Patient patient);
+    public void deletePatient(Patient patient);
 
-    void createOrUpdate(Patient patient);
+    public void createPatient(Patient patient);
 
-    Patient getPatientById(int id);
-
-    List<Patient> getAllPatient();
-
-    Patient getPatientByFirstName();
-
-    Patient getPatientBySecondName();
-
-    Patient getPatientByFirstAndSecondName();
-
-    Patient getPatientByIdAndFirstAndSecondName();
+    public List<Patient> getAllPatient();
 }
+
+

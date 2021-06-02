@@ -53,13 +53,7 @@ public class Patient implements Serializable {
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "id=" + id_patient +
-                ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", healthsComplaints='" + healthsComplaints + '\'' +
-                '}';
+        return firstName+ " "+secondName;
     }
 
     public List<Employee> getEmployees() {

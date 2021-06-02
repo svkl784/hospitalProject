@@ -11,12 +11,19 @@ import java.util.List;
 
 @Service
 public class PatientServiceImpl implements PatientService {
-   @Autowired
+    @Autowired
     private PatientDao patientDao;
 
     @Override
     @Transactional
     public List<Patient> getAllPatient() {
         return patientDao.getAllPatient();
+    }
+
+    @Override
+    @Transactional
+    public void createPatient(Patient patient) {
+        patientDao.createPatient(patient);
+
     }
 }

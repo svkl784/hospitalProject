@@ -16,19 +16,16 @@ public class PatientDaoImpl implements PatientDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void delete(Patient patient) {
+    public void deletePatient(Patient patient) {
 
     }
 
     @Override
-    public void createOrUpdate(Patient patient) {
-
+    public void createPatient(Patient patient) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(patient);
     }
 
-    @Override
-    public Patient getPatientById(int id) {
-        return null;
-    }
 
     @Override
     public List<Patient> getAllPatient() {
@@ -38,23 +35,5 @@ public class PatientDaoImpl implements PatientDao {
         return allPatients;
     }
 
-    @Override
-    public Patient getPatientByFirstName() {
-        return null;
-    }
 
-    @Override
-    public Patient getPatientBySecondName() {
-        return null;
-    }
-
-    @Override
-    public Patient getPatientByFirstAndSecondName() {
-        return null;
-    }
-
-    @Override
-    public Patient getPatientByIdAndFirstAndSecondName() {
-        return null;
-    }
 }

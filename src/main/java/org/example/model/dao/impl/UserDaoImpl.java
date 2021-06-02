@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void delete(User user) {
+    public void deleteUser(User user) {
     }
 
     @Override

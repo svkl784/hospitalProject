@@ -34,6 +34,8 @@
         <th scope="col">Second Name</th>
         <th scope="col">Date of birth</th>
         <th scope="col">Healths Complaints</th>
+        <th scope="col">Therapy</th>
+<%--        <th scope="col">Employees</th>--%>
 
     </tr>
     </thead>
@@ -44,10 +46,15 @@
             <td>${pat.secondName}</td>
             <td>${pat.dateOfBirth}</td>
             <td>${pat.healthsComplaints}</td>
+            <td>${pat.therapy}</td>
+<%--            <td>${pat.employees}</td>--%>
         </tr>
         >
     </c:forEach>
 </table>
+<br>
+<input type="button" value="Create new patient" onclick="window.location.href='createNewPatient'"/>
+
 <p><a href="https://www.google.com">This is a Google</a></p>
 
 
